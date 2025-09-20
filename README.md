@@ -1,16 +1,43 @@
-# sandbox
+# Flutter Sandbox
 
-A new Flutter project.
+Flutter実験用プロジェクト。
 
-## Getting Started
+## 環境構築
 
-This project is a starting point for a Flutter application.
+### FVM
 
-A few resources to get you started if this is your first Flutter project:
+以下のドキュメントに従ってインストールする。
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [https://fvm.app/documentation/getting-started/installation](https://fvm.app/documentation/getting-started/installation)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+インストール後、以下のコマンドを実行して、プロジェクトで使用しているバージョンのFlutterをインストールする。
+
+```
+fvm use
+```
+
+使用しているFlutterのバージョンは `.fvmrc` を参照すること。
+
+### xcodes
+
+以下のドキュメントに従ってインストールする。
+
+- [https://github.com/XcodesOrg/xcodes](https://github.com/XcodesOrg/xcodes)
+
+シミュレータがインストールされていない場合は、Xcode > Window > Devices and Simulatorsを開き、Simulatorsタブの左下の+ボタンを押して適当なデバイスを追加する。
+
+使用しているXcodeのバージョンは `.xcode-version` を参照すること。
+
+### Cocoapods
+
+以下のドキュメントに従ってインストールする。
+
+- [https://guides.cocoapods.org/using/getting-started.html#installation](https://guides.cocoapods.org/using/getting-started.html#installation)
+
+## 実行
+
+以下のコマンドで実行する。
+
+```
+fvm flutter run
+```
