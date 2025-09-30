@@ -11,7 +11,7 @@ jobs:
   ci:
     runs-on: "ubuntu-latest"
     steps:
-    - uses: "actions/checkout@v5"
+    - uses: "actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493"
     - uses: "subosito/flutter-action@fd55f4c5af5b953cc57a2be44cb082c8f6635e8e"
       with:
         channel: "stable"
@@ -25,7 +25,7 @@ jobs:
       contents: "read"
       pull-requests: "write"
     steps:
-    - uses: "actions/checkout@v5"
+    - uses: "actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493"
     - uses: "reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0"
       with:
         github_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -39,7 +39,7 @@ jobs:
       contents: "read"
       pull-requests: "write"
     steps:
-    - uses: "actions/checkout@v5"
+    - uses: "actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493"
     - uses: "reviewdog/action-actionlint@0b71b30a47a15c4d849868cca394fb656f1cf657"
       with:
         github_token: "${{ secrets.GITHUB_TOKEN }}"
