@@ -16,9 +16,12 @@ jobs:
       with:
         channel: "stable"
         flutter-version-file: "pubspec.yaml"
-    - run: flutter pub get
-    - run: flutter analyze
-    - run: flutter test
+    - run: |
+        flutter pub get
+    - run: |
+        flutter analyze
+    - run: |
+        flutter test
   yamllint:
     runs-on: "ubuntu-latest"
     steps:
