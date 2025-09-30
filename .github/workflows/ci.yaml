@@ -11,7 +11,7 @@ jobs:
   ci:
     runs-on: "ubuntu-latest"
     steps:
-    - uses: "actions/checkout@v4"
+    - uses: "actions/checkout@v5"
     - uses: "subosito/flutter-action@fd55f4c5af5b953cc57a2be44cb082c8f6635e8e"
       with:
         channel: "stable"
@@ -22,7 +22,7 @@ jobs:
   yamllint:
     runs-on: "ubuntu-latest"
     steps:
-    - uses: "actions/checkout@v4"
+    - uses: "actions/checkout@v5"
     - uses: "reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0"
       with:
         github_token: "${{ secrets.GITHUB_TOKEN }}"
