@@ -1,4 +1,4 @@
-name: CI
+name: "CI"
 
 on:
   push:
@@ -9,13 +9,24 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
     steps:
-    - uses: actions/checkout@v4
-    - uses: subosito/flutter-action@fd55f4c5af5b953cc57a2be44cb082c8f6635e8e
+    - uses: "actions/checkout@v4"
+    - uses: "subosito/flutter-action@fd55f4c5af5b953cc57a2be44cb082c8f6635e8e"
       with:
-        channel: stable
-        flutter-version-file: pubspec.yaml
+        channel: "stable"
+        flutter-version-file: "pubspec.yaml"
     - run: flutter pub get
     - run: flutter analyze
     - run: flutter test
+  yamllint:
+    runs-on: "ubuntu-latest"
+    steps:
+    - uses: "actions/checkout@v4"
+    - uses: "reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0"
+      with:
+        github_token: "${{ secrets.GITHUB_TOKEN }}"
+        reporter: "github-pr-review"
+        level: "warning"
+        yamllint_flags: "-c .yamllint ./.github/workflows/"
+        fail_level: "error"
