@@ -1,0 +1,7 @@
+name: "Broken Workflow"
+
+on:
+  push:
+    branch: [ "main" ]
+  pull_request:
+    branch: [ "main" ]
