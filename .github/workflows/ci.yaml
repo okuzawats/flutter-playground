@@ -21,6 +21,9 @@ jobs:
     - run: flutter test
   yamllint:
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: "read"
+      pull-requests: "write"
     steps:
     - uses: "actions/checkout@v5"
     - uses: "reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0"
@@ -32,6 +35,9 @@ jobs:
         fail_level: "error"
   actionlint:
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: "read"
+      pull-requests: "write"
     steps:
     - uses: "actions/checkout@v5"
     - uses: "reviewdog/action-actionlint@0b71b30a47a15c4d849868cca394fb656f1cf657"
