@@ -31,4 +31,4 @@ jobs:
           reporter: "github-pr-review"
           level: "warning"
           yamllint_flags: "-c .yamllint ./.github/workflows/"
-          fail_on_error: false
+          fail_level: "error"
