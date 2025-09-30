@@ -2,6 +2,11 @@ name: "Broken Workflow"
 
 on:
   push:
-    branch: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branch: [ "main" ]
+      branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: "ubuntu-latest"
