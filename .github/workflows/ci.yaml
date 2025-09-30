@@ -22,13 +22,11 @@ jobs:
   yamllint:
     runs-on: "ubuntu-latest"
     steps:
-      - name: "checkout"
-        uses: "actions/checkout@v4"
-      - name: "review yaml format"
-        uses: "reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0"
-        with:
-          github_token: "${{ secrets.GITHUB_TOKEN }}"
-          reporter: "github-pr-review"
-          level: "warning"
-          yamllint_flags: "-c .yamllint ./.github/workflows/"
-          fail_level: "error"
+    - uses: "actions/checkout@v4"
+    - uses: "reviewdog/action-yamllint@f01d8a48fd8d89f89895499fca2cff09f9e9e8c0"
+      with:
+        github_token: "${{ secrets.GITHUB_TOKEN }}"
+        reporter: "github-pr-review"
+        level: "warning"
+        yamllint_flags: "-c .yamllint ./.github/workflows/"
+        fail_level: "error"
