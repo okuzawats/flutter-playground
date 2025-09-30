@@ -30,3 +30,13 @@ jobs:
         level: "warning"
         yamllint_flags: "-c .yamllint ./.github/workflows/"
         fail_level: "error"
+  actionlint:
+    runs-on: "ubuntu-latest"
+    steps:
+    - uses: "actions/checkout@v5"
+    - uses: "reviewdog/action-actionlint@0b71b30a47a15c4d849868cca394fb656f1cf657"
+      with:
+        github_token: "${{ secrets.GITHUB_TOKEN }}"
+        reporter: "github-pr-review"
+        level: "warning"
+        fail_level: "error"
